@@ -12,10 +12,9 @@
 #define kPreferenceChangedNotification "com.julioverne.blightalert/Settings"
 #define PLIST_PATH_Settings "/var/mobile/Library/Preferences/com.julioverne.blightalert.plist"
 
-@interface SBCCBrightnessSectionController : NSObject
-- (void)_setBacklightLevel:(float)leve;
-- (float)_backlightLevel;
-@end
+extern "C" float BKSDisplayBrightnessGetCurrent();
+extern "C" void BKSDisplayBrightnessSet(float level, int _unknown);
+
 
 @interface AVFlashlight : NSObject
 @property (getter=isAvailable, nonatomic, readonly) bool available;

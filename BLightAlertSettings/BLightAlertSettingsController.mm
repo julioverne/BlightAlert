@@ -1,7 +1,8 @@
-#import <vector>
 #import <notify.h>
 #import <Social/Social.h>
-#import "prefs.h"
+#import <prefs.h>
+
+#define NSLog(...)
 
 #define PLIST_PATH_Settings "/var/mobile/Library/Preferences/com.julioverne.blightalert.plist"
 #define kAlertNotify "com.julioverne.blightalert"
@@ -332,7 +333,7 @@
 		[spec setProperty:[UIImage imageWithContentsOfFile:[[self bundle] pathForResource:@"twitter" ofType:@"png"]] forKey:@"iconImage"];
         [specifiers addObject:spec];
 		spec = [PSSpecifier emptyGroupSpecifier];
-        [spec setProperty:@"BLightAlert by julioverne © 2016" forKey:@"footerText"];
+        [spec setProperty:@"BLightAlert © 2017" forKey:@"footerText"];
         [specifiers addObject:spec];
 		_specifiers = [specifiers copy];
 	}
